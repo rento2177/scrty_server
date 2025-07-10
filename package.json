@@ -1,0 +1,9 @@
+{
+  "name": "scrty",
+  "version": "1.0.0",
+  "description": "x4.1 server",
+  "main": "index.js",
+  "repository": "https://github.com/rento2177/scrty_server",
+  "author": "rento",
+  "license": "MIT"
+}
