@@ -1,6 +1,6 @@
 const http = require("http");
 
-const server = http.createServer((req, res), () => {
+const server = http.createServer((_, res), () => {
   console.log("ok");
   res.end("ok");
 });
