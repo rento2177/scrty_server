@@ -1,5 +1,7 @@
 const http = require("node:http");
 const request = require("axios");
+const { createLocalStorage } = require("localstorage-ponyfill");
+const localStorage = createLocalStorage();
 const { v7: uuidv7 } = require("uuid");
 const port = 3000;
 let dec, test;
