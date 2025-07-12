@@ -265,11 +265,11 @@ const server = http.createServer((req, res) => {
 });
 
 setInterval(() => {
-  request.post("https://scrty.glitch.me", {
+  request.post("https://scrty-server.onrender.com", {
     type: "server keep", 
     cont: null
   });
-}, 4 * 60 * 1000);
+}, 12 * 60 * 1000);
 
 const cerid = async id => {
   try {
