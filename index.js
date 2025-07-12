@@ -1,5 +1,6 @@
-const http = require("http");
+const http = require("node:http");
 const request = require("axios");
+const { v7: uuidv7 } = require("uuid");
 const port = 3000;
 let dec, test;
 let cash = {};
@@ -84,7 +85,7 @@ const server = http.createServer((req, res) => {
         //console.log(json.toString(), "\n\naaaaaaaaaaaaaa\n\n", response.data);
         if (json.toString() == response.data) {  //==に直す
           cash[f1] = {
-            id: eval(process.env.v0)[process.env.v6], 
+            id: uuidv7(), 
             time: new Date().getTime(),
             index: 0
           };
@@ -156,7 +157,7 @@ const server = http.createServer((req, res) => {
           for (let i in dec) {
             g = g.replaceAll("@" + dec[i] + "0", i);
           }
-          cash[f1].id = eval(process.env.v0)[process.env.v6];
+          cash[f1].id = uuidv7();
           cash[f1].time = new Date().getTime();
           cash[f1].index++;
           res.write(`cerid = "${cash[f1].id}";`);
@@ -194,7 +195,7 @@ const server = http.createServer((req, res) => {
     } else if (json.type == "setup") {
       if (cash[f1] && new Date().getTime() - cash[f1].time < 2000) {
         if (cash[f1].id == json.cerid && cash[f1].index == 1 && await cerid(json.id || "")) {
-          cash[f1].cerid = eval(process.env.v0)[process.env.v6];
+          cash[f1].cerid = uuidv7();
           cash[f1].time = new Date().getTime();
           cash[f1].id = json.id;
           cash[f1].index++;
