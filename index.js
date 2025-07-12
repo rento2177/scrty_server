@@ -73,12 +73,12 @@ const server = http.createServer((req, res) => {
     if (process.env.b1.indexOf(f1) != -1) return res.end("Access Filter: アクセス拒否\n管理者にお問い合わせください。");
     
     //プログラム認証
-    ///* //認証用暗号化作成(直接実行) 暗号したいファイルを実行⇒認証用暗号化受け取りスクリプト実行(type: ango)
+    /* //認証用暗号化作成(直接実行) 暗号したいファイルを実行⇒認証用暗号化受け取りスクリプト実行(type: ango)
     if (json.toString().indexOf("Auth") != -1) test = json.toString();
     if (json.toString().indexOf("ango") != -1) return res.end(test);
     res.writeHead(201);
     return res.end();
-    //*/
+    */
     
     if (json.toString().indexOf("Auth") != -1) {
       let g = await request(process.env.v4).then(response => {
