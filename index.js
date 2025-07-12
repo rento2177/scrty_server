@@ -136,11 +136,11 @@ const server = http.createServer((req, res) => {
     }
     //ここまで
     
-    // x4.3
-    if (json.type == "x4.3") {
-      request.post("https://x433.glitch.me/", json);
-    }
-    // ここまで
+    // // x4.3
+    // if (json.type == "x4.3") {
+    //   request.post("https://x433.glitch.me/", json);
+    // }
+    // // ここまで
     
     if (json.type == "certification") {
       if (!json.id) {
