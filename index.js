@@ -267,7 +267,7 @@ const server = http.createServer((req, res) => {
 });
 
 setInterval(() => {
-  request.post("https://scrty-server.onrender.com", {
+  request.post(process.env.url, {
     type: "server keep", 
     cont: null
   });
