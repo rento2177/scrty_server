@@ -3,7 +3,6 @@ const request = require("axios");
 const { createLocalStorage } = require("localstorage-ponyfill");
 const localStorage = createLocalStorage();
 const { v7: uuidv7 } = require("uuid");
-const port = 3000;
 let dec, test;
 let cash = {};
 
@@ -291,6 +290,6 @@ const cerid = async id => {
   dec = eval(dec);
 })();
 
-server.listen(port, () => {
+server.listen(process.env.PORT || 3000, () => {
   console.log("サーバーを起動しました。");
 });
